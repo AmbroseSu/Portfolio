@@ -145,6 +145,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Facebook } from 'lucide-react';
+import avatar from '../logo/CongHieu.jpg';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
@@ -188,7 +189,7 @@ const Hero = () => {
           className="w-[500px] h-[500px] rounded-xl overflow-hidden border-4 border-primary-500 shadow-xl transform -translate-y-4 -mr-6"
         >
           <img
-            src="../src/logo/CongHieu.jpg"
+            src={avatar}
             alt="Cong Hieu Avatar"
             className="w-full h-full object-cover object-bottom scale-x-100 scale-y-100"
             style={{ imageRendering: 'auto' }}
