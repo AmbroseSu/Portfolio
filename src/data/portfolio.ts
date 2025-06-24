@@ -1,4 +1,6 @@
-import { Code, Database,ShieldCheck , Network, PanelLeft, Paintbrush2, Atom, BellRing, Braces, Flame, Feather, Code2, Coffee, Globe, Wifi, Bell, Shield, Smartphone, Server, GitBranch, Pocket as Docker, Terminal, Layers, Zap, Wrench, Cpu, Leaf, Monitor, ClipboardList, Palette } from 'lucide-react';
+import { Code, Database, ShieldCheck, Network, PanelLeft, Paintbrush2, Atom, BellRing, Braces, Flame, Feather, Code2, Coffee, Globe, Wifi, Bell, Shield, Smartphone, Server, GitBranch, Pocket as Docker, Terminal, Layers, Zap, Wrench, Cpu, Leaf, Monitor, ClipboardList, Palette } from 'lucide-react';
+import project1 from '../logo/document-management-system.jpg';
+import project2 from '../logo/school-management.jpg';
 
 export const skills = [
   {
@@ -70,21 +72,31 @@ export const skills = [
 export const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, and real-time order tracking.',
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Socket.io'],
-    github: 'https://github.com',
-    demo: 'https://demo.com'
+    title: 'Document Management  System',
+    description:
+      'DMS is a document management system that streamlines drafting, approval, and archiving through automated workflows and version control. It features integrated digital signatures for secure, legally compliant approvals',
+    image: project1,
+    tech: ['.NET', 'ReactJS', 'Docker', 'Flutter', 'PostgreSQL', 'MongoDB'],
+    github: {
+      backend: 'https://github.com/AmbroseSu/Document_Management_System',
+      frontend: 'https://github.com/cloudcode366/Document_Management_System_FE',
+      mobile: 'https://github.com/namle1805/Document_Management_System_Mobile',
+    },
+    demo: null,
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'Collaborative project management tool with real-time updates, drag & drop functionality, and team collaboration features.',
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600',
-    tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Tailwind'],
-    github: 'https://github.com',
-    demo: 'https://demo.com'
+    title: 'Fresher Academy Management System',
+    description:
+      'The Fresher Academy Management System (FAMS) is a comprehensive software solution designed to efficiently manage and streamline the operations of a fresher academy of FPT Software. FAMS encompasses a range of features including user management and training program.',
+    image: project2,
+    tech: ['Java', 'Spring Boot', 'Twilio', 'Maven', 'Docker', 'PostgreSQL'],
+    github: {
+      backend: 'https://github.com/AmbroseSu/Fresher-Academy-Management-System',
+      frontend: null,
+      mobile: null,
+    },
+    demo: null,
   },
   {
     id: 3,
@@ -126,10 +138,10 @@ export const experiences = [
     duration: '06/2025 - Now',
     description: 'Maintained and enhanced legacy systems while actively participating in the development of new enterprise applications. Focused on backend logic, API development, and ensuring system scalability and reliability across multiple internal tools and customer-facing platforms.',
     achievements: [
-'Refactored and stabilized legacy modules, reducing system downtime by 40%',
-    'Developed and deployed 10+ new microservices to support evolving business requirements',
-    'Improved API performance by optimizing database queries and caching strategies',
-    'Collaborated with cross-functional teams to ensure timely and quality feature delivery'
+      'Refactored and stabilized legacy modules, reducing system downtime by 40%',
+      'Developed and deployed 10+ new microservices to support evolving business requirements',
+      'Improved API performance by optimizing database queries and caching strategies',
+      'Collaborated with cross-functional teams to ensure timely and quality feature delivery'
     ]
   },
   {
@@ -140,9 +152,9 @@ export const experiences = [
     description: 'Developed core backend services for the Fresher Academy Management System (FAMS), a centralized platform for managing training programs, syllabuses, and classes. Responsible for designing robust APIs, implementing secure authentication/authorization, and optimizing backend performance to support seamless frontend integration.',
     achievements: [
       'Built and maintained 20+ RESTful API endpoints aligning with complex business logic',
-    'Integrated JWT-based authentication and role-based authorization using Spring Security',
-    'Improved backend performance and reliability by refactoring data access layers using JPA',
-    'Collaborated closely with frontend teams to ensure real-time, secure data flow'
+      'Integrated JWT-based authentication and role-based authorization using Spring Security',
+      'Improved backend performance and reliability by refactoring data access layers using JPA',
+      'Collaborated closely with frontend teams to ensure real-time, secure data flow'
     ]
   }
 ];

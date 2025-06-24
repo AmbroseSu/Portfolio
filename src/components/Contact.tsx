@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Facebook } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+
+const SERVICE_ID = 'service_wv30jib';
+const TEMPLATE_ID = 'template_egku5ym';
+const PUBLIC_KEY = 'C23Q-Kv3bJpwGiAsq';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,16 +23,22 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', message: '' });
-    alert('Message sent successfully!');
-  };
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY)
+    .then(() => {
+      alert('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+    })
+    .catch((error) => {
+      console.error('EmailJS error:', error);
+      alert('Failed to send message. Please try again later.');
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+    });
+};
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">

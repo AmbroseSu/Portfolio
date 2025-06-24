@@ -146,6 +146,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Facebook } from 'lucide-react';
 import avatar from '../logo/CongHieu.jpg';
+import fileCV from '../file/Software_Developer_Ha_Cong_Hieu.pdf';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
@@ -217,12 +218,19 @@ const Hero = () => {
               <span>View My Project</span>
             </button>
 
-            <button
+            {/* <button
               onClick={() => window.location.href = '#contact'} // hoặc thực hiện một hành động khác
               className="btn-primary group flex items-center justify-center"
             >
               <span>Download CV</span>
-            </button>
+            </button> */}
+            <a
+              href={fileCV}
+              download
+              className="btn-primary group flex items-center justify-center"
+            >
+              <span>Download CV</span>
+            </a>
 
             <div className="flex items-center space-x-4">
               <motion.a href="https://github.com/AmbroseSu" target="_blank" whileHover={{ scale: 1.1 }} className="p-3 bg-white/10 rounded-full hover:bg-white/20">
