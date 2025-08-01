@@ -146,7 +146,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Facebook } from 'lucide-react';
 import avatar from '../logo/CongHieu.jpg';
-import fileCV from '../file/Software_Developer_Ha_Cong_Hieu.pdf';
+import fileCV from '../file/Software_Developer_Net.pdf';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');

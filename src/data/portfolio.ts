@@ -100,21 +100,29 @@ export const projects = [
   },
   {
     id: 3,
-    title: 'AI Chat Application',
-    description: 'Real-time chat application with AI-powered responses, message encryption, and multi-room support.',
-    image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
-    tech: ['React', 'Python', 'OpenAI API', 'WebSocket', 'Redis'],
-    github: 'https://github.com',
-    demo: 'https://demo.com'
+    title: 'Warehouse Management System',
+    description: 'Manages item borrowing and returning with request handling, approvals, inventory checks, and return tracking. Ensures role-based control, audit logging, and optimized performance for warehouse operations.',
+    image: 'https://leanafy.com/wp-content/uploads/2024/08/176-warehouse-management.webp',
+    tech: ['.NET', 'ReactJS', 'Docker', 'PostgreSQL', 'Azure'],
+    github: {
+      backend: null,
+      frontend: null,
+      mobile: null,
+    },
+    demo: null,
   },
   {
     id: 4,
-    title: 'Analytics Dashboard',
-    description: 'Business intelligence dashboard with interactive charts, real-time data visualization, and comprehensive reporting.',
-    image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600',
-    tech: ['Vue.js', 'D3.js', 'Express', 'MySQL', 'Chart.js'],
-    github: 'https://github.com',
-    demo: 'https://demo.com'
+    title: 'TicketResell',
+    description: 'TicketResell is a platform that allows users to buy and resell event tickets safely and conveniently. The system offers a user-friendly interface for listing tickets, tracking transactions, and verifying ticket ownership.',
+    image: 'https://variety.com/wp-content/uploads/2023/11/featured_ticket_resale.jpg',
+    tech: ['.NET', 'ReactJS', 'Docker', 'PostgreSQL', 'Flutter', 'Dart'],
+    github: {
+      backend: 'https://github.com/AmbroseSu/TicketResell.git',
+      frontend: null,
+      mobile: 'https://github.com/AmbroseSu/TicketResell_Mobile.git',
+    },
+    demo: null,
   }
 ];
 
@@ -131,6 +139,21 @@ export const experiences = [
   //     'Implemented automated testing suite'
   //   ]
   // },
+  // {
+  //   id: 1,
+  //   company: 'Vietjet Aviation Academy',
+  //   role: 'Backend Developer',
+  //   duration: '06/2025 - Now',
+  //   description: 'Maintaining, enhancing, and developing enterprise applications for Vietjet Aviation Academy. Focused on designing and implementing backend solutions for equipment management systems that support training operations. Responsible for system stability, API development, and ensuring high availability for internal tools.',
+  //   achievements: [
+  //     'Designed and implemented the Equipment Management System to streamline training operations for the academy',
+  //     'Developed scalable RESTful APIs serving both internal web and mobile platforms',
+  //     'Refactored legacy modules to improve system stability and reduce technical debt',
+  //     'Optimized database schemas and queries, improving API response times by 30%',
+  //     'Collaborated with product owners and trainers to align system features with operational needs',
+  //     'Ensured system reliability through comprehensive testing, monitoring, and deployment pipelines'
+  //   ]
+  // },
   {
     id: 1,
     company: 'HiSoft Company',
@@ -145,7 +168,7 @@ export const experiences = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     company: 'FPT Software',
     role: 'Backend Developer',
     duration: '01/2024 - 05/2025',

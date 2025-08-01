@@ -128,6 +128,7 @@ import { projects } from '../data/portfolio';
 const Projects = () => {
   const [openPopupIndex, setOpenPopupIndex] = useState<number | null>(null);
   const popupRef = useRef(null);
+  const [showNotice, setShowNotice] = useState(false);
 
   // Close popup when clicking outside
   useEffect(() => {
@@ -142,6 +143,22 @@ const Projects = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  const handleCodeClick = (project: any, index: number) => {
+    const githubLinks = project.github;
+    const allNull =
+      !githubLinks ||
+      Object.values(githubLinks).every(
+        (link) => link === null || link === '' || link === undefined
+      );
+
+    if (allNull) {
+      setShowNotice(true); // Hiển thị thông báo
+      return;
+    }
+
+    setOpenPopupIndex(openPopupIndex === index ? null : index);
+  };
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden">
@@ -200,10 +217,17 @@ const Projects = () => {
 
                 <div className="flex space-x-4 relative">
                   <div className="relative flex-1">
-                    <button
+                    {/* <button
                       onClick={() =>
                         setOpenPopupIndex(openPopupIndex === index ? null : index)
                       }
+                      className="btn-secondary w-full flex items-center justify-center"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Code
+                    </button> */}
+                    <button
+                      onClick={() => handleCodeClick(project, index)}
                       className="btn-secondary w-full flex items-center justify-center"
                     >
                       <Github className="w-4 h-4 mr-2" />
@@ -263,6 +287,24 @@ const Projects = () => {
           ))}
         </div>
       </div>
+      {showNotice && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+          <div className="bg-dark-800 border border-dark-600 p-6 rounded-lg max-w-sm text-center">
+            <h3 className="text-xl font-semibold text-white mb-4">
+              Source Code Unavailable
+            </h3>
+            <p className="text-gray-400 mb-6">
+              This is a private company project. Source code cannot be disclosed.
+            </p>
+            <button
+              onClick={() => setShowNotice(false)}
+              className="btn-primary w-full"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
